@@ -1,0 +1,230 @@
+{
+  "title": "大语言模型智能体的工具调用研究",
+  "subtitle": "——概念分解、检索策略与文献述评",
+  "cover_meta": [
+    "课程：科技文献检索（示例）",
+    "说明：本示例的正文为演示工具链而虚构，题录为 Crossref 可核验的真实文献"
+  ],
+  "cover_date": "2026 年 1 月",
+  "concepts": [
+    {
+      "name": "对象",
+      "zh": [
+        "大语言模型",
+        "大模型",
+        "语言模型",
+        "LLM"
+      ],
+      "en": [
+        "large language model",
+        "LLM",
+        "language model"
+      ]
+    },
+    {
+      "name": "行为",
+      "zh": [
+        "工具调用",
+        "函数调用",
+        "插件调用",
+        "外部工具"
+      ],
+      "en": [
+        "tool use",
+        "function calling",
+        "tool invocation",
+        "agent tool use"
+      ]
+    },
+    {
+      "name": "形态",
+      "zh": [
+        "智能体",
+        "代理",
+        "Agent"
+      ],
+      "en": [
+        "agent",
+        "autonomous agent",
+        "LLM agent"
+      ]
+    },
+    {
+      "name": "评价",
+      "zh": [
+        "评测",
+        "基准",
+        "可靠性"
+      ],
+      "en": [
+        "benchmark",
+        "evaluation",
+        "reliability"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "type": "h1",
+      "text": "1 课题分析"
+    },
+    {
+      "type": "p",
+      "text": "大语言模型开始通过调用外部工具完成任务之后，评测对象发生了变化：从“这段文本写得好不好”，变成“这个任务有没有真的做完”。这一变化同时牵动两个问题——模型如何选择并调用工具，以及调用失败之后如何发现并恢复。本报告的任务是把这两条线上的文献检索清楚，而不是给出领域结论。"
+    },
+    {
+      "type": "h2",
+      "text": "1.1 检索概念分解"
+    },
+    {
+      "type": "p",
+      "text": "本课题拆成对象、行为、形态、评价四组概念。四组同时用 AND 连接时命中量会掉到个位数，因此实际检索采用两两交叉，再用评价组单独补检。同义词的取舍原则是：宁可多列几个近义词导致少量噪声，也不要因为漏掉一个说法而整批漏检。"
+    },
+    {
+      "type": "h1",
+      "text": "2 检索策略"
+    },
+    {
+      "type": "p",
+      "text": "中文库用 CNKI 的主题字段，外文库用 Web of Science 的 TS 字段；预印本用 Crossref 的题名检索补检，因为这一方向的部分工作先出现在预印本平台。检索时间范围限定为 2020 年至今，语言不限，文献类型以期刊论文与会议论文为主，预印本单独标注。"
+    },
+    {
+      "type": "h2",
+      "text": "2.1 检索式"
+    },
+    {
+      "type": "p",
+      "text": "以“对象 × 行为”为例，CNKI 表达式为：主题=(大语言模型 OR 大模型 OR 语言模型) AND 主题=(工具调用 OR 函数调用 OR 插件调用)。外文对应 TS=(\"large language model\" OR LLM) AND TS=(\"tool use\" OR \"function calling\")。文末参考文献按顺序编码制著录。"
+    },
+    {
+      "type": "h1",
+      "text": "3 结果与述评"
+    },
+    {
+      "type": "p",
+      "text": "初检得到中文文献数十篇、英文文献数百篇，去重后保留 5 条作为格式与核验的示例。从题名与摘要看，这些工作大致分三路：一路把工具能力接进多模态模型，训练模型直接产出工具调用{{wang2025mllmtool}}；一路关心调用链的可验证性，试图让每一步调用都可追溯、可校验{{mazumdar2026runtime}}{{kadyrbek2026proof}}；还有一路在做评测基础设施，把“模型 + 工具 + 评测脚本”打包成可复现的实验装置{{bi2026benchmark}}。"
+    },
+    {
+      "type": "h2",
+      "text": "3.1 研究空白"
+    },
+    {
+      "type": "p",
+      "text": "三路工作各自成立，但彼此之间缺少共同的度量：训练侧关心调用成功率，验证侧关心可追溯，评测侧关心可复现。落到具体任务上，调用失败后的恢复能力仍缺少统一口径，机器人场景的工作把它拆成检测、解释与恢复三段分别评估{{izquierdobadiola2025raider}}，这类拆法是否能迁移到软件工具链还没有定论。中文场景的工具生态与英文差异较大，相关基准也少，这是本课题认为值得继续做的方向。"
+    },
+    {
+      "type": "h1",
+      "text": "4 结论"
+    },
+    {
+      "type": "p",
+      "text": "工具调用把“语言能力”与“执行能力”绑在一起，评价体系需要同时看任务完成率与失败恢复率。文献检索层面，建议固定四组概念、用两两交叉保证召回，再逐条核验题录真实性；题录核验不通过的条目宁可删掉，也不要凭印象补全。"
+    },
+    {
+      "type": "table",
+      "caption": "表 1 检索概念分解与同义词扩展",
+      "headers": [
+        "概念组",
+        "中文规范词",
+        "同义、近义词",
+        "英文对应词"
+      ],
+      "rows": [
+        [
+          "对象",
+          "大语言模型",
+          "大模型、语言模型",
+          "large language model, LLM"
+        ],
+        [
+          "行为",
+          "工具调用",
+          "函数调用、插件调用",
+          "tool use, function calling"
+        ],
+        [
+          "形态",
+          "智能体",
+          "代理、Agent",
+          "agent, LLM agent"
+        ],
+        [
+          "评价",
+          "评测",
+          "基准、可靠性",
+          "benchmark, evaluation"
+        ]
+      ],
+      "widths": [
+        2.4,
+        4.2,
+        3.6,
+        4.4
+      ]
+    }
+  ],
+  "references": [
+    {
+      "key": "wang2025mllmtool",
+      "kind": "conference",
+      "title": "MLLM-Tool: A multimodal large language model for tool agent learning",
+      "authors": [
+        "WANG C",
+        "LUO W",
+        "DONG S"
+      ],
+      "year": "2025",
+      "conference": "2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+      "pages": "6678-6687",
+      "doi": "10.1109/wacv61041.2025.00650"
+    },
+    {
+      "key": "mazumdar2026runtime",
+      "kind": "conference",
+      "title": "Runtime verification of dimensional semantics in checkpointed large language model tool workflows",
+      "authors": [
+        "MAZUMDAR A"
+      ],
+      "year": "2026",
+      "conference": "Proceedings of the Second Workshop for REsearch on Agent Language Models (REALM 2026)",
+      "pages": "800-806",
+      "doi": "10.18653/2026.realm-1.54"
+    },
+    {
+      "key": "kadyrbek2026proof",
+      "kind": "journal",
+      "title": "Proof carrying agent actions enable verifiable licensing of language model tool use",
+      "authors": [
+        "KADYRBEK N",
+        "MANSUROVA M"
+      ],
+      "year": "2026",
+      "journal": "Scientific Reports",
+      "doi": "10.1038/s41598-026-74900-x"
+    },
+    {
+      "key": "bi2026benchmark",
+      "kind": "preprint",
+      "title": "Benchmark, agent, and tool-use harnesses for large language models: A taxonomy of evaluation infrastructure",
+      "authors": [
+        "BI Z",
+        "HAO J",
+        "MA Y"
+      ],
+      "year": "2026",
+      "doi": "10.20944/preprints202609.0236.v1"
+    },
+    {
+      "key": "izquierdobadiola2025raider",
+      "kind": "preprint",
+      "title": "Raider: Tool-equipped large language model agent for robotic action issue detection, explanation and recovery",
+      "authors": [
+        "IZQUIERDO-BADIOLA S",
+        "ALENYA G",
+        "RIZZO C"
+      ],
+      "year": "2025",
+      "doi": "10.2139/ssrn.5191419"
+    }
+  ]
+}
