@@ -1,0 +1,67 @@
+{
+  "references": [
+    {
+      "key": "wang2025mllmtool",
+      "kind": "conference",
+      "title": "MLLM-Tool: A multimodal large language model for tool agent learning",
+      "authors": [
+        "WANG C",
+        "LUO W",
+        "DONG S"
+      ],
+      "year": "2025",
+      "conference": "2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+      "pages": "6678-6687",
+      "doi": "10.1109/wacv61041.2025.00650"
+    },
+    {
+      "key": "mazumdar2026runtime",
+      "kind": "conference",
+      "title": "Runtime verification of dimensional semantics in checkpointed large language model tool workflows",
+      "authors": [
+        "MAZUMDAR A"
+      ],
+      "year": "2026",
+      "conference": "Proceedings of the Second Workshop for REsearch on Agent Language Models (REALM 2026)",
+      "pages": "800-806",
+      "doi": "10.18653/2026.realm-1.54"
+    },
+    {
+      "key": "kadyrbek2026proof",
+      "kind": "journal",
+      "title": "Proof carrying agent actions enable verifiable licensing of language model tool use",
+      "authors": [
+        "KADYRBEK N",
+        "MANSUROVA M"
+      ],
+      "year": "2026",
+      "journal": "Scientific Reports",
+      "doi": "10.1038/s41598-026-74900-x"
+    },
+    {
+      "key": "bi2026benchmark",
+      "kind": "preprint",
+      "title": "Benchmark, agent, and tool-use harnesses for large language models: A taxonomy of evaluation infrastructure",
+      "authors": [
+        "BI Z",
+        "HAO J",
+        "MA Y"
+      ],
+      "year": "2026",
+      "doi": "10.20944/preprints202609.0236.v1"
+    },
+    {
+      "key": "izquierdobadiola2025raider",
+      "kind": "preprint",
+      "title": "Raider: Tool-equipped large language model agent for robotic action issue detection, explanation and recovery",
+      "authors": [
+        "IZQUIERDO-BADIOLA S",
+        "ALENYA G",
+        "RIZZO C"
+      ],
+      "year": "2025",
+      "doi": "10.2139/ssrn.5191419"
+    }
+  ],
+  "note": "题录与 project.json 的 references 保持同步；改动时两处一起改，或用 all 子命令自动覆盖。"
+}
